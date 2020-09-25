@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Snake Game</title>
+
+        <style>
+            .main {
+                margin: auto;
+                width: 50%;
+            }
+
+            .canvasBox {
+                border: solid black 1px;
+                background-color:gray;
+            }
+
+        </style>
+
+    </head>
+    <body onload="rand()">
+        
+        <h1>JavaScript Snake Game</h1>
+
+        <div class="main">
+            <canvas id="myCanvas" class ="canvasBox" width="300" height="300"></canvas>
+        </div>
+        <div class="result"></div>
+        <button id="btn" onclick="moveTest()">Go</button>
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            const res = document.getElementsByClassName("result");
+
+            document.addEventListener("keydown", function() {
+                alert("keydown");
+            });
+
+
+                let x = 20;
+                let y = 20;
+                ctx.fillStyle = "yellow";
+                ctx.fillRect(x,y,10,10);
+                rand();           
+
+            function moveTest() {
+                ctx.fillStyle = "yellow";
+                ctx.fillRect(x = x-5, y, 10, 10);
+                if(x == 0 || x == 300) {
+                    alert("Game over");
+                   // start();
+                }
+                rand();
+            }
+
+            function move(key) {
+                let key = event.keyCode;
+                alert(key);
+
+            }
+
+            function rand() {
+                let randX = Math.round(Math.random() * 280);
+                let randY = Math.round(Math.random() * 280);
+            //    alert(randX + " " + randY);
+                ctx.fillStyle = "red";
+                ctx.fillRect(randX, randY, 10, 10);
+                if (randX == x) {
+                    randX = Math.round(Math.random() * 280);
+                    alert(randX);
+                }
+                if (randY == y) {
+                    randY = Math.round(Math.random() * 280);
+                }
+            }
+        </script>
+
+    </body>
+</html>

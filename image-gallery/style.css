@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* RESPONSIVE IMAGE GALLERY */
+.gallery {
+    display: grid;
+   /* grid-template-columns: repeat(auto-fill, 300px); */
+    /*the columns will be automatically generated if there is space, but additional column without any content will be created too if there is space*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /*only columns with any content will be automatically generated if there is space*/
+    /*minmax(minimal size of the picture, maximal size of the picture)*/
+   /* column-gap: 20px;
+    row-gap: 20px;*/
+    gap: 1em 3em; /* gap: row-gap column-gap */
+    margin: 2em;
+}
+
+.gallery img {
+    width: 100%;
+}
+

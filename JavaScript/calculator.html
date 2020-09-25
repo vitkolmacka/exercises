@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Calculator</title>
+
+        <style>
+            .calc {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-gap: 1rem;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        
+        
+
+        <div class="calc">
+            <form id="calculator" action="" onsubmit="event.preventDefault()">
+
+                <input type="number" id="num1" /> <br /> <br />
+                <input type="number" id="num2" />
+                <div id="result"></div>
+                <br /> 
+                    <input type="radio" value="add" name="math" id="add" checked/>
+                    <label for="add">Add</label>
+                    <input type="radio" value="subtract" name="math"/>
+                    <label for="subtract">Subtract</label>
+                    <input type="radio" value="multiply" name="math" id="multiply"/>
+                    <label for="multiply">Multiply</label>
+                    <input type="radio" value="divide" name="math" id="divide"/>
+                    <label for="divide">Divide</label>
+                <br />
+
+                <button id="btnCalc" onclick=calc()>Calculate</button> <br />
+
+                <button id="7" value="7" onclick=btn()>7</button>
+                <button id="8" value="8" onclick=btn()>8</button>
+                <button id="9" value="9" onclick=btn()>9</button>
+                <button id="4" value="4" onclick=btn()>4</button>
+                <button id="5" value="5" onclick=btn()>5</button>
+                <button id="6" value="6" onclick=btn()>6</button>
+                <button id="1" value="1" onclick=btn()>1</button>
+                <button id="2" value="2" onclick=btn()>2</button>
+                <button id="3" value="3" onclick=btn()>3</button>
+                <button id="0" value="0" onclick=btn()>0</button>
+                
+                <button id="clear" onclick=cl()>CE</button>
+                <button id="remove" onclick=rem()>Remove</button>
+            </form>
+        </div>
+        <script>
+
+            //get the text box id into a variable
+            const input1 = document.getElementById("num1");
+            const input2 = document.getElementById("num2");
+
+            function calc() {
+                let a = input1.value;
+                let b = input2.value;
+                let res = document.getElementById("result");
+                let val = document.getElementById("calculator");
+                if (a && b != "")
+                {
+                    if (val.math[0].checked) {
+                    res.innerHTML = Number(a) + Number(b);
+                    }
+                    if (val.math[1].checked) {
+                        res.innerHTML = a - b;
+                    }
+                    if (val.math[2].checked) {
+                        res.innerHTML = a * b;
+                    }
+                    if (val.math[3].checked) {
+                        res.innerHTML = a / b;
+                    }
+                }
+               else res.innerHTML = "Please input both numbers";
+            }
+
+            //input the numbers into the text box
+            const btn = () =>  input1.value = input1.value + event.target.value;
+            //CE - Clear Entry button
+            const cl = () => input1.value = "";    
+            //Remove button - remove last character of input      
+            const rem = () => input1.value = input1.value.substr(0, input1.value.length -1);
+
+        </script>
+    </body>
+</html>

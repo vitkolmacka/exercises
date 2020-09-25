@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Clock</title>
+    </head>
+    <body onload=clock()>
+        
+        <script>
+            function clock() {
+                let date = Date();
+                let c = document.getElementById("clock");
+                c.innerHTML = date.getTime();
+            }
+        </script>
+
+        <div id="clock"></div>
+        <br />
+        <div id="wake">
+            <label for="wakeTime">Set Wake Up Time</label>
+            <select name="wakeTime" id="wakeTime">
+                <option value="9AM">9AM</option>
+                <option value="11AM">11AM</option>
+                <option value="5AM">5AM</option>
+            </select>
+        </div>
+
+        <div id="lunch">
+            <label for="lunchTime">Set Lunch Time</label>
+            <select name="wakeTime" id="wakeTime">
+                <option value="9AM">9AM</option>
+                <option value="11AM">11AM</option>
+                <option value="5AM">5AM</option>
+            </select>
+        </div>
+
+        <div id="nap">
+            <label for="napTime">Set Nap Time</label>
+            <select name="wakeTime" id="wakeTime">
+                <option value="9AM">9AM</option>
+                <option value="11AM">11AM</option>
+                <option value="5AM">5AM</option>
+            </select>
+        </div>
+
+    </body>
+</html>

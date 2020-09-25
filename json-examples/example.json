@@ -1,0 +1,10 @@
+{
+	"name": "Jack",
+	"age": 22,
+	"address": {
+		"street": "High Street 29",
+		"city": "New York",
+		"postcode": 85569
+	},
+	"children": ["Peter", "Ariana"]
+}
